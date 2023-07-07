@@ -10,4 +10,4 @@ RUN mkdir -p "/var/cache/osbuild-composer/output"
 COPY /bin/osbuild-worker /usr/libexec/osbuild-composer/
 COPY ./dnf-json /usr/libexec/osbuild-composer/
 
-ENTRYPOINT ["/usr/libexec/osbuild-composer/osbuild-worker", "172.16.0.1:8700"]
+ENTRYPOINT ["/usr/libexec/osbuild-composer/osbuild-worker", "localhost:8700"]

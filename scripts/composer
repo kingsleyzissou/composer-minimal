@@ -2,8 +2,6 @@
 
 sudo podman run \
 --rm -d \
--p 8080:8080 \
--p 8700:8700 \
 -v ./config:/etc/osbuild-composer \
---network osbuild-net \
+--pod osbuild-pod \
 --name composer composer

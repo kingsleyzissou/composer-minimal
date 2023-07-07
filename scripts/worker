@@ -9,5 +9,5 @@ sudo podman run \
 --cap-add MKNOD \
 --cap-add SYS_ADMIN \
 --cap-add NET_ADMIN \
---network osbuild-net \
+--pod osbuild-pod \
 --name worker worker

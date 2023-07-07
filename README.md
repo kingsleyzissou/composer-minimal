@@ -25,7 +25,7 @@ Copy these binaries back into the repo.
 ## Create network
 
 ```
-sudo podman network create --subnet 172.16.0.0/24 --gateway 172.16.0.1 osbuild-net
+sudo podman pod create -p 8080:8080 -p 8700:8700 osbuild-pod
 ```
 
 ## Build the containers
@@ -43,10 +43,8 @@ sudo podman build -t worker -f Dockerfile-worker
 ```
 sudo podman run \
 --rm -d \
--p 8080:8080 \
--p 8700:8700 \
 -v ./config:/etc/osbuild-composer \
---network osbuild-net \
+--pod osbuild-pod \
 --name composer composer
 ```
 
@@ -63,6 +61,6 @@ sudo podman run \
 --cap-add MKNOD \
 --cap-add SYS_ADMIN \
 --cap-add NET_ADMIN \
---network osbuild-net \
+--pod osbuild-pod \
 --name worker worker
 ```
