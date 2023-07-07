@@ -1,0 +1,9 @@
+#!/bin/bash
+
+curl \
+  --silent \
+  --show-error \
+  --cacert ./config/ca-crt.pem \
+  --key ./config/client-key.pem \
+  --cert ./config/client-crt.pem \
+  --insecure https://localhost:8080/api/image-builder-composer/v2/openapi

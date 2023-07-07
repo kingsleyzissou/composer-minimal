@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo podman kill composer worker
+
+./scripts/composer
+./scripts/worker

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+sudo podman run \
+--rm -d \
+-v ./config:/etc/osbuild-composer \
+-v ./config:/etc/osbuild-worker \
+-e CACHE_DIRECTORY=/var/cache/osbuild-worker \
+--privileged \
+--cap-add MKNOD \
+--cap-add SYS_ADMIN \
+--cap-add NET_ADMIN \
+--network osbuild-net \
+--name worker worker

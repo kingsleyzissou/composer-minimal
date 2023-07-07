@@ -1,0 +1,6 @@
+#!/bin/bash
+
+./scripts/gen-certs \
+	./data/openssl.cnf \
+ 	config \
+	config/ca
