@@ -22,7 +22,7 @@ Copy these binaries back into the repo.
 
 `./setup.sh`
 
-## Create network
+## Create a pod
 
 ```
 sudo podman pod create -p 8080:8080 -p 8700:8700 osbuild-pod
